@@ -1,19 +1,24 @@
 main {
-  width: 800px;
-  margin: 200px auto 72px auto;
-  background-color: rgb(219, 108, 94);
-  padding: 24px;
+  width: 800px;   /* This is a block element(element main). Here, we have centered the block element by giving it width and setting the
+  left and right margin to auto. This is the general concept to center the block element.*/
+
+  margin: 200px auto 72px auto; /* MARGIN used to separate the element with other element */
+
+  background-color: rgb(219, 108, 94); /*Try to use linear gradient for visual effect*/
+
+  padding: 24px; /*PADDING used when trying to increase distance between content and its border within an element*/
   border: 5px solid rgb(44, 44, 44);
-  border-radius: 8px;
-  box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 8px; /*For the curved type shape for the border */
+  box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.3); /*For the shadow type effect*/
 }
 
-img {
+img { /*IMAGE is an inline element, but it is a rare case that vertical margin can be set for IMG(inline element)*/
   width: 200px;
-  height: 200px;
-  border-radius: 100px;
+  height: 200px; /*Mostly for IMAGE, you provide both width and height */
+  
+  border-radius: 100px; /*To make image circular*/
   border: 5px solid rgb(44, 44, 44);
-  margin-top: -134px;
+  margin-top: -134px; /*Negative Margin to make the image pop out of the main element inside of the body of HTML */
 }
 
 h1 {

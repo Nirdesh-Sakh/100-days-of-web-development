@@ -8,13 +8,15 @@ h1 {
   margin: 12px 0;
 }
 
-#description {
+#description {   
+  /* Here is the concept of margin collapsing: The bottom margin for h1 as stated above is 12px and the upper margin of this 'p' element is 8px.
+  So, should the distance between h1 and this 'p' element be 12px +8px = 20px?-> No, the distance between them would be the highest number which is 12px only.*/
   margin: 8px;
 }
 
 /* header p {
   margin-bottom: 36px;
-} */
+} */   /* This commented code was also to explain the concept of margin collapsing between 'p' and 'ol'*/
 
 a {
   padding: 12px 48px;
@@ -23,7 +25,11 @@ a {
   border: 1px solid rgb(167, 1, 78);
   border-radius: 4px;
   font-size: 24px;
-  display: inline-block;
+  display: inline-block; /* The anchor tag is an inline element, so the vertical margin properties doesn't work on
+  the inline element. Another thing to keep in mind is it also doesn't care about the margins and paddings of its own or others to be kept separated.
+  So, to keep the margin and gap between top and bottom, we changed the display to inline-block which then
+  can have the properties of both inline element(to stay in the same line and take the only required space, not the whole line block) and 
+  block element(usage of vertical margins).*/
   margin: 12px 0;
 }
 
@@ -35,7 +41,7 @@ a:hover {
 ol {
   list-style: none;
   width: 500px;
-  margin: 36px auto 0 auto;
+  margin: 36px auto 0 auto; /* Same approach to center the ol element. Give width, set left and right margin to auto.*/
   padding: 0;
 }
 
@@ -52,7 +58,8 @@ h2 {
   font-family: "Oswald", sans-serif;
 }
 
-main p {
+main p { /* This applies css property to the child 'p' of 'main'. To apply the same properties to different 
+  element, we can use (main , p) which will apply the css property to all the present main and p elements.*/ 
   margin: 12px;
   color: rgb(71, 29, 22);
 }
