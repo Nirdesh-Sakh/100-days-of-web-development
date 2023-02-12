@@ -36,25 +36,35 @@ label {
 input,
 textarea,
 select {
+  /*Since, the button or input field has its own default font chosen by the browser, we use inherit to 
+  make the font of the button same as the body of the HTML*/
   font: inherit;
   padding: 0.5rem;
   border: 1px solid rgb(152, 159, 184);
   width: 100%;
   display: block;
   border-radius: 4px;
+  /*border-box for box-sizing as the padding or margin can be off the form area as width for input is
+  set to 100%. After setting it to border-box, it takes into account the margin and padding to be part 
+  of the width set.*/
   box-sizing: border-box;
 }
 
 textarea {
-  resize: none;
+  /*textarea is resizeable as default which can break the orientation of the HTML. So, we can choose
+  different type of resize value such as none, vertical, etc.*/
+  resize:vertical;
 }
 
+/*focus is for input elements of the form when the mouse or keyboard is used on that field.*/ 
 input:focus,
 textarea:focus {
   background-color: rgb(217, 227, 247);
 }
 
 button {
+  /*Since, the button or input field has its own default font chosen by the browser, we use inherit to 
+  make the font of the button same as the body of the HTML*/
   font: inherit;
   border: 1px solid rgb(51, 67, 100);
   padding: 0.5rem 1.5rem;
@@ -63,6 +73,7 @@ button {
 }
 
 #form-actions {
+  /*Since button is an inline element, we can use text-align to set the alignment of the inline elements.*/
   text-align: right;
 }
 
@@ -90,10 +101,13 @@ button {
 }
 
 .inline-control label {
+  /* the label element has its own default margin, so we set it to 0.*/
   margin: 0;
   margin-left: 0.5rem;
 }
 
 .inline-control input {
+  /* As all the input field has a width of 100%, assigning this individual input with width auto will only
+  take the width necessary for it, not 100%.*/ 
   width: auto;
 }

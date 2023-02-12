@@ -11,12 +11,16 @@
       <h1>Contact Us</h1>
     </header>
     <main>
+      <!--form HTML element is used for creation of forms, more info on action and method later in backend-->
       <form action="/challenge" method="GET">
         <section>
           <h2>How can we help you?</h2>
           <ul>
             <li>
+              <!--label HTML element associated with form input where for links the input id to the label-->
               <label for="username">Your Name</label>
+              <!--many input types to choose from with each input given unique id. name method holds the
+              value inputted in the input field and required is a validation constraint of the input field-->
               <input type="text" id="username" name="username" required />
             </li>
             <li>
@@ -35,6 +39,7 @@
             </li>
             <li>
               <label for="message">Your Message</label>
+              <!--textarea is another HTML element that takes input for more than one line-->
               <textarea
                 id="message"
                 name="message"
@@ -48,7 +53,10 @@
         </section>
         <section>
           <label for="channel">How did you find us?</label>
+          <!--select HTML element is used for dropdown and option lists the option for the dropdown menu-->
           <select name="channel" id="channel" required>
+            <!--The value holds the selection of this input, like if user selects Web Search, then the
+            browser will send "channel=search" as the input -->
             <option value="search">Web Search</option>
             <option value="word-of-mouth">Word of Mouth</option>
             <option value="other">Other</option>
@@ -58,6 +66,8 @@
           <h2>How should we reply?</h2>
           <ul>
             <li class="inline-control">
+              <!--The radio input type is a unique one where user can only select one of the option.
+              The name holds the value picked. -->
               <input
                 type="radio"
                 name="reply"
@@ -90,6 +100,9 @@
           </ul>
         </section>
         <section class="inline-control">
+          <!--In case of checkbox, user can check as many boxes as they want unlike the radio input
+          and you can even keep the same "name" for multiple checkboxes which has different values that 
+          the coder can assign to the checkboxes-->
           <input
             type="checkbox"
             name="accept-terms"
@@ -99,6 +112,9 @@
           <label for="accept-terms">Accept Terms</label>
         </section>
         <section id="form-actions">
+          <!--button HTML element is used for creation of button and the type can be selected for the
+          role of the button. reset will clear the form, submit will perform the form action directed in 
+        the form HTML creation portion-->
           <button type="reset" class="btn-empty">Clear</button>
           <button type="submit" class="btn-filled">Submit</button>
         </section>
