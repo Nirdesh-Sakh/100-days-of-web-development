@@ -21,6 +21,8 @@ app.get('/restaurants', function (req, res) {
   const fileData = fs.readFileSync(filePath);
   const storedRestaurants = JSON.parse(fileData);
 
+  //In the restaurants.ejs file, we have the numberOfRestaurants variable, and in this app.js, we have calculated the value for that variable
+  //and the value will get replaced when being shown by the browser.
   res.render('restaurants', { numberOfRestaurants: storedRestaurants.length });
 });
 

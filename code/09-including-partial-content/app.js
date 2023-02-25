@@ -1,3 +1,7 @@
+//In this section, there is use of ejs keyword called <%- include() %>. They are in the views directory.
+//They help to make the code more managable by letting us store the same code used in many files in a separate ejs file and include them
+//wherever they are needed. The <%- include() %> takes in the file location as 1st parameter and also takes in dynamic variables if
+//they are needed as seen in the 18th and 19th line of the restaurant.ejs file
 const fs = require('fs');
 const path = require('path');
 

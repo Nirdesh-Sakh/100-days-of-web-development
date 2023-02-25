@@ -23,7 +23,7 @@ app.get('/restaurants', function (req, res) {
 
   res.render('restaurants', {
     numberOfRestaurants: storedRestaurants.length,
-    restaurants: storedRestaurants,
+    restaurants: storedRestaurants, //restaurants variable is present in restaurant.ejs and from here, it holds value of storedRestaurants
   });
 });
 

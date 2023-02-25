@@ -52,7 +52,9 @@
       <p>Find your next favorite restaurants with help of our other users!</p>
       <p>We found <%= numberOfRestaurants %> restaurants.</p>
       <ul id="restaurants-list">
-        <% for (const restaurant of restaurants) { %>
+        <!--Here, we have looped for as many restaurants present in the file, and that many <li> will 
+          be generated. We have used <%    %> in all places where there should be dynamic values-->
+        <% for (const restaurant of restaurants) { %> <!--restaurants variable is present in app.js-->
           <li class="restaurant-item">
             <article>
               <h2><%= restaurant.name %></h2>
