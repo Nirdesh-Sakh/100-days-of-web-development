@@ -40,7 +40,7 @@ app.get('/restaurants/:id', function (req, res) {
       return res.render('restaurant-detail', { restaurant: restaurant });
     }
   }
-
+  //We have created a 404.ejs page to render it when the loops completes but doesn't find the required id
   res.render('404');
 });
 
@@ -71,6 +71,8 @@ app.get('/about', function (req, res) {
   res.render('about');
 });
 
+//Also, here is another usage of 404.ejs page, for when user requests for a invalid page on our domain, but this has some limitations
+//which is addressed in the next section
 app.use(function (req, res) {
   res.render('404');
 });

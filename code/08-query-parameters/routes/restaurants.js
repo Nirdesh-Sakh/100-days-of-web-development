@@ -6,7 +6,12 @@ const resData = require('../util/restaurant-data');
 const router = express.Router();
 
 router.get('/restaurants', function (req, res) {
+
+  //When restaurants page is loaded, the following line checks whether the url has some query parameters, and if it doesn't, it sets the
+  //default value to be asc and sorts the restaurants list in ascending order
   let order = req.query.order;
+
+  //nextOrder variable is used to decide whether to sort asc or desc, it changes on every reload of the page
   let nextOrder = 'desc';
 
   if (order !== 'asc' && order !== 'desc') {
@@ -19,6 +24,7 @@ router.get('/restaurants', function (req, res) {
 
   const storedRestaurants = resData.getStoredRestaurants();
 
+  //The following is the code to sort the array of restaurants by name in either asc or desc order
   storedRestaurants.sort(function (resA, resB) {
     if (
       (order === 'asc' && resA.name > resB.name) ||

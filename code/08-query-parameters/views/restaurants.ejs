@@ -14,6 +14,9 @@
       <% } else { %>
         <p>Find your next favorite restaurants with help of our other users!</p>
         <p>We found <%= numberOfRestaurants %> restaurants.</p>
+        <!-- In the below form, we have implemented a button which has a hidden type and value such as
+        asc or desc assigned dynamically. When the button is clicked, the page gets reloaded as defined by the type="action" and query is
+      attached to the url defined by &order=asc or &order=desc and which can be accessed by using req.query.order in restaurant.js-->
         <form action="/restaurants" method="GET">
           <input type="hidden" value="<%= nextOrder %>" name="order">
           <button class="btn">Change Order</button>

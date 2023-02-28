@@ -27,6 +27,11 @@ app.get('/restaurants', function (req, res) {
   });
 });
 
+/* The colon (:) in the route parameter :id specifies that the id value is a dynamic parameter that will be captured and stored 
+as a property on the req.params object, allowing the server to serve dynamic content based on the parameter value.
+So, :id is a placeholder or a variable that captures the value of the id parameter in the URL. When a user makes a request to a URL 
+like /restaurants/123, the :id part in the URL pattern matches the 123 value and captures it as a variable called id. 
+This variable is then passed to the function as req.params.id.*/
 app.get('/restaurants/:id', function (req, res) {
   const restaurantId = req.params.id;
   res.render('restaurant-detail', { rid: restaurantId });

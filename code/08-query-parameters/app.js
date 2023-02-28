@@ -1,3 +1,5 @@
+//In this section, we have made changes to the restaurants.js and restaurants.ejs file to understand Query Parameters and Hidden Form field
+//which can be helpful in sorting and other functionalities
 const path = require('path');
 
 const express = require('express');

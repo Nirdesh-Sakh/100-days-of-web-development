@@ -41,7 +41,7 @@ app.get('/restaurants/:id', function (req, res) {
     }
   }
 
-  res.render('404');
+  res.status(404).render('404');
 });
 
 app.get('/recommend', function (req, res) {
@@ -71,12 +71,16 @@ app.get('/about', function (req, res) {
   res.render('about');
 });
 
+//It is also important to use .status method to set the status code on the browser side as well so that browser also knows that the
+//requested page has some errors or wasn't found so that browser doesn't cache store that site
 app.use(function (req, res) {
-  res.render('404');
+  res.status(404).render('404');
 });
 
+/*This code snippet handles server-side errors by rendering a predefined error page. It is an example of how you can use 
+middleware functions in Express.js to handle SERVER-SIDE errors in a structured way.*/
 app.use(function (error, req, res, next) {
-  res.render('500');
+  res.status(500).render('500');
 });
 
 app.listen(3000);
